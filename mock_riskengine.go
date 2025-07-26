@@ -28,5 +28,8 @@ func main() {
 	})
 
 	log.Println("🚨 Risk engine running on :9090")
-	http.ListenAndServe(":9090", nil)
+
+	if err := http.ListenAndServe(":9090", nil); err != nil {
+		log.Fatal(err)
+	}
 }

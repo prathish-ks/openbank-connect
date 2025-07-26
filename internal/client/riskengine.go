@@ -17,7 +17,7 @@ type RiskResponse struct {
 }
 
 func GetRiskScore(userID, accountID string) (int, error) {
-	url := "http://localhost:9090/risk" // mock internal microservice
+	url := "http://host.docker.internal:9090/risk" // mock internal microservice
 
 	reqBody, _ := json.Marshal(RiskRequest{
 		UserID:  userID,
